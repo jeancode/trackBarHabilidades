@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackBar</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+      
+        });
+    </script>
+    <style> 
+
+        body{
+            margin:0px;
+            font-family: sans-serif;
+        }
+        #contenido{
+
+            width:100%;
+            height:100%;
+            background:black;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #formContents{
+
+            width: 400px;
+            height:300px;
+            
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .itemForm{
+            flex:1;
+            width: 100%;
+            height:100px;
+            display:flex;
+            flex-direction: column;
+        }
+        .itemFormName{
+            flex:1;
+            color:white;
+            display:flex;
+            padding-left:23px;
+            align-items: center;
+            max-height: 30px;
+
+        }
+        .itemFormBar{
+            flex:1;
+            width:100%;
+            height:30px;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            position: relative;
+      
+        }
+        .barContent{
+
+            width: 90%;
+            height:20px;
+            background: rgba(43, 42, 42, 0.959);
+            border-radius: 10px;
+      
+
+        }
+        .barProgress{
+            height:100%;
+            -webkit-transition: all .5s ease;;
+            border-radius: 10px;
+            position: relative;
+           
+            
+        }
+        .html{
+            width: 90%;
+            background: linear-gradient(45deg,rgb(255, 94, 0),rgb(248, 96, 159));
+            animation: inhtml 2s ease forwards;
+            
+        }
+        
+        .css{
+            width: 95%;
+            background: linear-gradient(45deg,rgb(68, 0, 255),rgb(96, 248, 164));
+            animation: css 3s ease forwards;
+        }
+        .javascript{
+            width: 93%;
+            background: linear-gradient(45deg,rgb(0, 238, 255),rgb(81, 219, 53));
+            animation: js 4s ease forwards;
+        }
+
+        .glob{
+            background: rgba(255, 255, 255, 0.712);
+            width: 40px;
+            height: 25px;
+            color:black;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 13px;
+            animation:showGlob 1s ease forwards;
+
+        }
+
+        @keyframes colorHue {
+            from{
+                filter:hue-rotate(0deg);
+            }
+            to{
+
+                filter:hue-rotate(100deg);
+            }
+            
+        }
+        @keyframes showGlob{
+            from{
+               opacity: 0;
+               left:0%;
+               top:-40px;
+               
+            }
+            to{
+                opacity: 1;
+                left:calc(100% - 20px);;
+                top:-40px;
+                
+            }
+        }
+      
+        @keyframes inhtml{
+            from{
+                width:0px;
+            }
+            to{
+                width:90%;
+            }
+        }
+        @keyframes css{
+            from{
+                width:0px;
+            }
+            to{
+                width:95%;
+            }
+        }
+        @keyframes js{
+            from{
+                width:0px;
+            }
+            to{
+                width:80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido">
+
+        <div id="formContents">
+
+            <div class="itemForm">
+
+                
+                <div class="itemFormName">Html</div>
+                <div class="itemFormBar">
+                   
+                    <div class="barContent">
+                        
+                        <div class="barProgress html" style="--i:90%">
+                            <div class="glob">90%</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="itemForm">
+                
+                <div class="itemFormName">CSS</div>
+                <div class="itemFormBar">
+
+                    <div class="barContent">
+                        <div class="barProgress css">
+                            <div class="glob">95%</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="itemForm">
+                <div class="glob glob3">80%</div>
+                <div class="itemFormName">Javascript</div>
+                <div class="itemFormBar">
+
+                    <div class="barContent">
+                        <div class="barProgress javascript">
+                            <div class="glob">80%</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
